@@ -1,0 +1,52 @@
+{
+  //"files": ["src/*.ts"], //this takse priority from include/exclude
+  //"extends" "../tsconfig-base", // inherits from another ts config file
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"],
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./@types",
+    "target": "es2016", //es5 es6 es2015 es2017 esNext(New features in JS)
+    "module": "commonjs",
+    //"lib": ["dom","DOM.Iterable","es6", "ScriptHost"], //Allow to have more refine control Js api
+    //"lib": ["dom","es5", "ScriptHost"], //Allow to have more refine control Js api
+    "outDir": "dist",
+    //"outFile": "dist/bundle.js", in order to this to work change the "module": "system" or "module: "amd",
+    "sourceMap": true,
+    "inlineSources": true,
+    //"inlineSourceMap": true,
+    "mapRoot": "/mappings/",
+    "typeRoots": [
+      "src/@types",
+      "node_modules/@types"
+    ],
+    //"noEmitOnError": false, //Dont create the output dist file if there is an error
+
+    "strict": true, //Enables all stricts bellow:
+    "noImplicitThis": false,
+    // "noImplicitAny": false,
+    // "alwaysStrict": true,
+    // "strictNullChecks": false,
+    // "strictFunctionTypes": false,
+    // "strictPropertyInitialization": false,
+    //"experimentalDecorators": true, //allow to use declarators in angular, new features
+    //"emitDecoratorMetadata": true, // allow angular dependency injections
+
+    /*CLI Output Tweaks*/
+    //"traceResolution": true, //allow debuggiong and resolving modules
+    //"diagnostics": true, //Print memory, files and more
+    //"listFiles": true, //Print the files that ts compiler has worked on
+    //"listEmittedFiles": true, //Print the name of the generated files by the compiler
+    //"pretty": true, // Preetify and add more details of the errors printed on console
+
+    /*Enfporced Code Quality*/
+    //"noUnusedLocals": false, //we create a variable and we did not use typescrip show a warning
+    //"noUnusedParameters": false, // Says if a parameter is not used so you can remove it
+    //"noFallthroughCasesInSwitch": false, //we have swithc statement we must be more explicit
+    //"noImplicitReturns": false, //all of the functions must return a value
+    
+    /*Perfomance Bundling and tslib*/
+    //"noEmitHelpers": false,
+    //"importHelpers": false, //npm i tslib --save with this enabled noEmitHelpers is not nessesary
+  }
+}
